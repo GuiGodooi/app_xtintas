@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'View/description_page.dart';
 import 'View/login_page.dart';
 import 'View/sign_up_page.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'XTintas',
-      home: LoginPage(),
+      home: DescriptionPage(),
     );
   }
 }
