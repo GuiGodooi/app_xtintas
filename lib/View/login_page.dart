@@ -1,4 +1,7 @@
+import 'package:app_xtintas/View/components/colors_widget.dart';
 import 'package:app_xtintas/View/components/widget_logo.dart';
+import 'package:app_xtintas/View/description_page.dart';
+import 'package:app_xtintas/View/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -121,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
+                        backgroundColor: ColorsDS.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -143,7 +146,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     InkWell(
                       autofocus: false,
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpPage(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         'Criar conta',
                         style: TextStyle(
@@ -162,14 +171,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
-/*ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
-                        )*/ 

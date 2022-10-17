@@ -1,3 +1,4 @@
+import 'package:app_xtintas/View/components/colors_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -60,7 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 11,
                 ),
                 TextFormField(
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: ColorsDS.white),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -210,7 +211,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                _elevatedButtomP('oi', () {})
+                SizedBox(
+                  height: 60,
+                )
               ],
             ),
           ),
@@ -218,25 +221,4 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
-}
-
-Widget _elevatedButtomP(String text, Function()? onPressed) {
-  return ElevatedButton(
-    onPressed: onPressed,
-    style: ElevatedButton.styleFrom(
-      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-      foregroundColor: Colors.black,
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50),
-      ),
-    ),
-    child: Text(
-      text,
-      style: const TextStyle(
-        color: Color.fromRGBO(91, 77, 167, 1),
-        fontSize: 16,
-      ),
-    ),
-  );
 }
