@@ -1,7 +1,6 @@
+import 'package:app_xtintas/View/tutorial_page.dart';
 import 'package:flutter/material.dart';
-import 'View/description_page.dart';
-import 'View/login_page.dart';
-import 'View/sign_up_page.dart';
+import 'View/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'XTintas',
-      home: DescriptionPage(),
+      home: HomePage(),
     );
   }
 }

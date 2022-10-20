@@ -1,8 +1,11 @@
+import 'package:app_xtintas/components/button_widget.dart';
+import 'package:app_xtintas/components/colors_widget.dart';
+import 'package:app_xtintas/components/sized_box_widget.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
-import 'components/widget_logo.dart';
+import '../../components/align_text_widget.dart';
+import '../../components/widget_logo.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -17,7 +20,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(91, 77, 167, 1),
+      backgroundColor: ColorsDS.purple,
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -34,33 +37,21 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   child: WidgetLogo(),
                 ),
-                const Text(
+                Text(
                   'Criar Conta',
-                  style: TextStyle(
+                  style: GoogleFonts.openSans(
                     color: Colors.white,
                     fontSize: 22,
-                    fontFamily: 'Open Sans',
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBoxComponent.verticalSpaceS20,
+                const AlignTxt(
+                  text: 'Nome',
                 ),
-                const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    'Nome',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 11,
-                ),
+                SizedBoxComponent.verticalSpaceS12,
                 TextFormField(
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.openSans(color: ColorsDS.white),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -69,30 +60,20 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     filled: true,
                     fillColor: Colors.white38,
-                    hintText: 'Guilherme',
+                    hintText: 'Nome',
                     hintStyle: const TextStyle(
                       fontSize: 16,
                       color: Colors.white54,
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 17,
+                SizedBoxComponent.verticalSpaceS16,
+                const AlignTxt(
+                  text: 'Email',
                 ),
-                const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    'Email',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 11,
-                ),
+                SizedBoxComponent.verticalSpaceS12,
                 TextFormField(
+                  style: GoogleFonts.openSans(color: ColorsDS.white),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -101,30 +82,20 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     filled: true,
                     fillColor: Colors.white38,
-                    hintText: 'gui.godoi@loomi.com.br',
+                    hintText: 'test@xtintas.com.br',
                     hintStyle: const TextStyle(
                       fontSize: 16,
                       color: Colors.white54,
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 17,
+                SizedBoxComponent.verticalSpaceS16,
+                const AlignTxt(
+                  text: 'Senha',
                 ),
-                const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    'Senha',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 11,
-                ),
+                SizedBoxComponent.verticalSpaceS12,
                 TextFormField(
+                  style: GoogleFonts.openSans(color: ColorsDS.white),
                   keyboardType: TextInputType.emailAddress,
                   obscureText: _securityText,
                   decoration: InputDecoration(
@@ -152,23 +123,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 17,
+                SizedBoxComponent.verticalSpaceS16,
+                const AlignTxt(
+                  text: 'Confirmar senha',
                 ),
-                const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    'Confirmar Senha',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 11,
-                ),
+                SizedBoxComponent.verticalSpaceS12,
                 TextFormField(
+                  style: GoogleFonts.openSans(color: ColorsDS.white),
+                  obscureText: _securityText,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -178,9 +140,16 @@ class _SignUpPageState extends State<SignUpPage> {
                     filled: true,
                     fillColor: Colors.white38,
                     hintText: '********',
-                    suffixIcon: const Icon(
-                      MdiIcons.eyeOff,
-                      color: Colors.white,
+                    suffixIcon: IconButton(
+                      icon: const Icon(
+                        MdiIcons.eyeOff,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _securityText = !_securityText;
+                        });
+                      },
                     ),
                     hintStyle: const TextStyle(
                       fontSize: 16,
@@ -188,29 +157,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 46,
+                SizedBoxComponent.verticalSpaceS48,
+                Button(
+                  text: 'Criar conta',
+                  press: () {},
                 ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 100, vertical: 15),
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                  ),
-                  child: const Text(
-                    'Criar Conta',
-                    style: TextStyle(
-                      color: Color.fromRGBO(91, 77, 167, 1),
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                _elevatedButtomP('oi', () {})
+                SizedBoxComponent.verticalSpaceS52,
               ],
             ),
           ),
@@ -218,25 +170,4 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
-}
-
-Widget _elevatedButtomP(String text, Function()? onPressed) {
-  return ElevatedButton(
-    onPressed: onPressed,
-    style: ElevatedButton.styleFrom(
-      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-      foregroundColor: Colors.black,
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50),
-      ),
-    ),
-    child: Text(
-      text,
-      style: const TextStyle(
-        color: Color.fromRGBO(91, 77, 167, 1),
-        fontSize: 16,
-      ),
-    ),
-  );
 }
