@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../components/colors_widget.dart';
+import 'package:app_xtintas/presenter/paint_presenter.dart';
+import 'package:app_xtintas/model/repository/paint_repository.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,6 +41,15 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  ListView.builder(
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: Center(
+                          child: Text('oi'),
+                        ),
+                      );
+                    },
+                  )
                 ],
               ),
             ),

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:app_xtintas/model/add_to_cart.dart';
 import 'package:http/http.dart' as http;
 
-class PaintOptionsRepository {
+class PaintRepository {
   Future<Paint> getPaintOptions() async {
     Uri url = Uri.parse('https://62968cc557b625860610144c.mockapi.io/paints');
 
