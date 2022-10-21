@@ -19,8 +19,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _senhaController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _senhaController = TextEditingController();
 
   bool _securityText = true;
   String? errorText;

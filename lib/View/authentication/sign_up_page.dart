@@ -26,7 +26,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<SignUpPresenter>(context);
     return Scaffold(
       backgroundColor: ColorsDS.purple,
       body: SingleChildScrollView(

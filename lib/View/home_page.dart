@@ -1,6 +1,5 @@
 import 'package:app_xtintas/View/tutorial_page.dart';
 import 'package:app_xtintas/components/colors_widget.dart';
-import 'package:app_xtintas/components/sized_box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

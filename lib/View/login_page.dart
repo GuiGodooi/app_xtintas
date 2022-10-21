@@ -1,9 +1,8 @@
-import 'package:app_xtintas/View/components/colors_widget.dart';
-import 'package:app_xtintas/View/components/widget_logo.dart';
-import 'package:app_xtintas/View/description_page.dart';
 import 'package:app_xtintas/View/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '../components/colors_widget.dart';
+import '../components/widget_logo.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -62,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 10,
                     ),
                     TextFormField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
