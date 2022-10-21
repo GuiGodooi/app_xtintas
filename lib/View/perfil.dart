@@ -42,14 +42,17 @@ class AccountPage extends StatelessWidget {
                           const Padding(
                             padding: EdgeInsets.all(10),
                             child: CircleAvatar(
-                              radius: 48, // Image radius
+                              radius: 40,
                               backgroundImage: NetworkImage(
                                   'https://1.bp.blogspot.com/-KLg5TEY1v6U/T6P9I6YPZwI/AAAAAAAABEc/iYpstw_ouMQ/s1600/Mr_bean.jpg',
                                   scale: 10),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 70),
+                            padding: const EdgeInsets.only(
+                              right: 70,
+                              left: 10,
+                            ),
                             child: Text(
                               'Guilherme Godoi',
                               style: GoogleFonts.openSans(
