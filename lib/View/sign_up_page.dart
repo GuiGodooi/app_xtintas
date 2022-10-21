@@ -1,9 +1,9 @@
-import 'package:app_xtintas/View/components/colors_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import 'components/widget_logo.dart';
+import '../components/colors_widget.dart';
+import '../components/widget_logo.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -61,7 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 11,
                 ),
                 TextFormField(
-                  style: TextStyle(color: ColorsDS.white),
+                  style: const TextStyle(color: ColorsDS.white),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -211,7 +211,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 )
               ],

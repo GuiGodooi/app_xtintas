@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetLogo extends StatelessWidget {
   const WidgetLogo({super.key});
@@ -11,13 +12,13 @@ class WidgetLogo extends StatelessWidget {
         Image.asset(
           'assets/bucket-and-paint.png',
         ),
-        const Text(
+        Text(
           'XTintas',
-          style: TextStyle(
-              fontSize: 40,
-              color: Colors.white,
-              fontFamily: 'Open Sans',
-              fontWeight: FontWeight.bold),
+          style: GoogleFonts.openSans(
+            fontSize: 36,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );
