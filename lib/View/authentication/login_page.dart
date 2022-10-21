@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:app_xtintas/View/authentication/sign_up_page.dart';
+import 'package:app_xtintas/components/align_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -16,7 +19,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _senhaController = TextEditingController();
+
   bool _securityText = true;
+  String? errorText;
 
   @override
   Widget build(BuildContext context) {
@@ -48,21 +55,22 @@ class _LoginPageState extends State<LoginPage> {
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBoxComponent.verticalSpaceS40,
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'E-mail',
-                      style: GoogleFonts.openSans(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
+                  const AlignTxt(
+                    text: 'Email',
                   ),
                   SizedBoxComponent.verticalSpaceS12,
                   TextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    controller: _emailController,
                     style: GoogleFonts.openSans(color: ColorsDS.white),
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
+                      errorText: errorText,
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(5),
@@ -77,21 +85,22 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBoxComponent.verticalSpaceS32,
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Senha',
-                      style: GoogleFonts.openSans(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
+                  const AlignTxt(
+                    text: 'Senha',
                   ),
                   SizedBoxComponent.verticalSpaceS12,
                   TextFormField(
+                    validator: (value) {
+                      if (value == null) {
+                        return errorText;
+                      }
+                      return null;
+                    },
+                    controller: _senhaController,
                     style: GoogleFonts.openSans(color: ColorsDS.white),
                     obscureText: _securityText,
                     decoration: InputDecoration(
+                      errorText: errorText,
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(5),
@@ -123,6 +132,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBoxComponent.verticalSpaceS20,
                   InkWell(
+                    child: Text(
+                      'Criar conta',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -133,13 +149,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       );
                     },
-                    child: Text(
-                      'Criar conta',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
-                    ),
                   ),
                   SizedBoxComponent.verticalSpaceS36,
                 ],

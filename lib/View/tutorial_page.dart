@@ -1,10 +1,10 @@
-import 'package:app_xtintas/View/home_page.dart';
 import 'package:app_xtintas/components/sized_box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../components/colors_widget.dart';
 import '../components/text_tutorial_widget.dart';
+import 'home_page.dart';
 
 class TutorialPage extends StatelessWidget {
   const TutorialPage({super.key});
@@ -29,7 +29,7 @@ class TutorialPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const HomePage();
+                                  return HomePage();
                                 },
                               ),
                             );

@@ -18,6 +18,7 @@ class AlignTxt extends StatelessWidget {
         style: GoogleFonts.openSans(
           fontSize: 16,
           color: Colors.white,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

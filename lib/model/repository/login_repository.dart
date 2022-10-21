@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:app_xtintas/Model/login.dart';
+
 import 'package:http/http.dart' as http;
 
 class LoginRepository {
-  Future<Login> getLogin() async {
+  Future<Login> get getLogin async {
     final response = await http.get(
         Uri.parse('https://62968cc557b625860610144c.mockapi.io/login'),
         headers: {

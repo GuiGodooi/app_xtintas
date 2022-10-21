@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:app_xtintas/Model/add_to_cart.dart';
 import 'package:flutter/material.dart';
 

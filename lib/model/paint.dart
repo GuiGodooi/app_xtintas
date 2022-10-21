@@ -1,12 +1,12 @@
-class Paint {
+class PaintProduct {
   String? name;
   String? image;
   int? price;
   List<Benefits>? benefits;
 
-  Paint({this.name, this.image, this.price, this.benefits});
+  PaintProduct({this.name, this.image, this.price, this.benefits});
 
-  Paint.fromJson(Map<String, dynamic> json) {
+  PaintProduct.fromJson(Map<String, dynamic> json) {
     name = json["name"];
     image = json["image"];
     price = json["price"];

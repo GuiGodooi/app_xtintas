@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import '../model/repository/login_repository.dart';
 
 class LoginPresenter extends ChangeNotifier {
@@ -9,7 +10,7 @@ class LoginPresenter extends ChangeNotifier {
   var token;
 
   void getToken() async {
-    token = await loginRepository.getLogin();
+    token = await loginRepository.getLogin;
     notifyListeners();
   }
 }
