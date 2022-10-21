@@ -1,5 +1,5 @@
+import 'package:app_xtintas/View/authentication/login_page.dart';
 import 'package:flutter/material.dart';
-import 'View/authentication/login_page.dart';
 
 void main() {
   runApp(const MyApp());
