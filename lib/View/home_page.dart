@@ -37,67 +37,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Stack(
                       children: [
-                        Card(
-                          elevation: 5,
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 50),
-                                child: Image.asset(
-                                  'assets/time.png',
-                                  scale: 0.8,
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.all(
-                                  35,
-                                ),
-                                child: Text(
-                                  'Tinta Suvinil Criativa',
-                                  style: GoogleFonts.openSans(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    ButtonRounded(
-                                      press: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) {
-                                              return const TutorialPage();
-                                            },
-                                          ),
-                                        );
-                                      },
-                                      text: 'Como Pintar',
-                                      background: ColorsDS.purple,
-                                      radius: BorderRadius.horizontal(
-                                        left: Radius.circular(20),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    ButtonRounded(
-                                      text: 'Tirar dúvidas',
-                                      press: () {},
-                                      background: ColorsDS.grey,
-                                      radius: BorderRadius.horizontal(
-                                        right: Radius.circular(20),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        CardPaint(),
                         Align(
                           alignment: Alignment.topRight,
                           child: Padding(
@@ -124,6 +64,76 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CardPaint extends StatelessWidget {
+  const CardPaint({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 45),
+            child: Image.asset(
+              'assets/time.png',
+              scale: 0.8,
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.all(
+              35,
+            ),
+            child: Text(
+              'Tinta Suvinil Criativa',
+              style: GoogleFonts.openSans(
+                  fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ButtonRounded(
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const TutorialPage();
+                        },
+                      ),
+                    );
+                  },
+                  text: 'Como Pintar',
+                  background: ColorsDS.purple,
+                  radius: BorderRadius.horizontal(
+                    left: Radius.circular(20),
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                ButtonRounded(
+                  text: 'Tirar dúvidas',
+                  press: () {},
+                  background: ColorsDS.grey,
+                  radius: BorderRadius.horizontal(
+                    right: Radius.circular(20),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
