@@ -10,6 +10,31 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.store_outlined,
+                size: 35,
+              ),
+              label: 'Loja'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                size: 35,
+              ),
+              label: 'Carrinho'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                size: 35,
+              ),
+              label: 'Perfil'),
+        ],
+        selectedItemColor: ColorsDS.purple,
+        unselectedItemColor: Colors.grey,
+        onTap: (int idx) {},
+      ),
       backgroundColor: ColorsDS.whiteBG,
       body: Center(
         child: Column(

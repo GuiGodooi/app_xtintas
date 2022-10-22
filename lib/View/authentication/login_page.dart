@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:app_xtintas/View/authentication/sign_up_page.dart';
+import 'package:app_xtintas/View/home_page.dart';
 import 'package:app_xtintas/components/align_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -128,7 +129,16 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBoxComponent.verticalSpaceS40,
                   Button(
                     text: 'Login',
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const HomePage();
+                          },
+                        ),
+                      );
+                    },
                   ),
                   SizedBoxComponent.verticalSpaceS20,
                   InkWell(

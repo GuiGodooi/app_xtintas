@@ -1,4 +1,5 @@
 import 'package:app_xtintas/View/authentication/login_page.dart';
+import 'package:app_xtintas/View/home_page.dart';
 import 'package:app_xtintas/View/perfil.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'XTintas',
-      home: AccountPage(),
+      home: HomePage(),
     );
   }
 }
