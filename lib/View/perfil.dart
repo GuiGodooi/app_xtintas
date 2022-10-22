@@ -10,6 +10,31 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.store_outlined,
+                size: 35,
+              ),
+              label: 'Loja'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                size: 35,
+              ),
+              label: 'Carrinho'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                size: 35,
+              ),
+              label: 'Perfil'),
+        ],
+        selectedItemColor: ColorsDS.purple,
+        unselectedItemColor: Colors.grey,
+        onTap: (int idx) {},
+      ),
       backgroundColor: ColorsDS.whiteBG,
       body: Center(
         child: Column(
@@ -42,14 +67,17 @@ class AccountPage extends StatelessWidget {
                           const Padding(
                             padding: EdgeInsets.all(10),
                             child: CircleAvatar(
-                              radius: 48, // Image radius
+                              radius: 40,
                               backgroundImage: NetworkImage(
                                   'https://1.bp.blogspot.com/-KLg5TEY1v6U/T6P9I6YPZwI/AAAAAAAABEc/iYpstw_ouMQ/s1600/Mr_bean.jpg',
                                   scale: 10),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(right: 70),
+                            padding: const EdgeInsets.only(
+                              right: 70,
+                              left: 10,
+                            ),
                             child: Text(
                               'Guilherme Godoi',
                               style: GoogleFonts.openSans(

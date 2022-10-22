@@ -1,7 +1,9 @@
 import 'package:app_xtintas/View/tutorial_page.dart';
 import 'package:app_xtintas/components/colors_widget.dart';
+import 'package:app_xtintas/components/sized_box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../components/button_rounded.dart';
 
@@ -16,6 +18,30 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.store_outlined,
+                size: 35,
+              ),
+              label: 'Loja'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                size: 35,
+              ),
+              label: 'Carrinho'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person_outline,
+                size: 35,
+              ),
+              label: 'Perfil'),
+        ],
+        selectedItemColor: ColorsDS.purple,
+        unselectedItemColor: Colors.grey,
+      ),
       body: Center(
         child: Column(
           children: [
@@ -57,6 +83,29 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                    const CardInfo(),
+                    SizedBoxComponent.verticalSpaceS20,
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: ColorsDS.purple,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          )),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                        ),
+                        child: Text(
+                          'Adicionar ao carrinho',
+                          style: GoogleFonts.openSans(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBoxComponent.verticalSpaceS36,
                   ],
                 ),
               ),
@@ -68,10 +117,85 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class CardPaint extends StatelessWidget {
-  const CardPaint({
+class CardInfo extends StatelessWidget {
+  const CardInfo({
     Key? key,
   }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              'Diferenciais',
+              style: GoogleFonts.openSans(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const RowCustom(
+            text: 'Fácil de aplicar',
+            icon: Icons.brush,
+          ),
+          const RowCustom(
+            text: 'Não deixa cheiro',
+            icon: MdiIcons.airFilter,
+          ),
+          const RowCustom(
+            text: 'É só abrir, mexer e pintar',
+            icon: Icons.threesixty_rounded,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class RowCustom extends StatelessWidget {
+  final String text;
+  final icon;
+  const RowCustom({
+    Key? key,
+    required this.text,
+    required this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 30,
+        bottom: 10,
+        top: 10,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Icon(
+            icon,
+            size: 30,
+          ),
+          SizedBoxComponent.horizontalSpaceS24,
+          Text(
+            text,
+            style: GoogleFonts.openSans(
+              fontSize: 15,
+              fontWeight: FontWeight.normal,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class CardPaint extends StatelessWidget {
+  const CardPaint({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
